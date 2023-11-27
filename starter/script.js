@@ -79,6 +79,10 @@ const hold = function () {
     clearCurrentScore('#current--0');
     player1Active = !player1Active;
     player2Active = !player2Active;
+    if (player1score >= 100) {
+      player1.classList.add('player--winner');
+      return;
+    }
     removeClass(player1, 'player--active');
     addClass(player2, 'player--active');
     return;
@@ -89,6 +93,10 @@ const hold = function () {
     clearCurrentScore('#current--1');
     player1Active = !player1Active;
     player2Active = !player2Active;
+    if (player1score >= 100) {
+      player2.classList.add('player--winner');
+      return;
+    }
     removeClass(player2, 'player--active');
     addClass(player1, 'player--active');
     return;
